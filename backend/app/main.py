@@ -110,9 +110,12 @@ async def health_check():
 # ============================================
 # API Routes
 # ============================================
-# TODO: Import and include routers here as we build them
-# from app.api import tasks, auth, integrations
-# app.include_router(tasks.router, prefix="/api/tasks", tags=["tasks"])
+from app.api import tasks
+
+app.include_router(tasks.router, prefix="/api", tags=["tasks"])
+
+# TODO: Add more routers as we build them
+# from app.api import auth, integrations
 # app.include_router(auth.router, prefix="/api/auth", tags=["auth"])
 # app.include_router(integrations.router, prefix="/api/integrations", tags=["integrations"])
 
